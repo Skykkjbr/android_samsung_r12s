@@ -119,7 +119,9 @@ jobs:
             source build/envsetup.sh
           set -e
           lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && export FOX_BUILD_ZIP=0 && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
-
+          working-directory: ${{ steps.pwd.outputs.workspace-folder }}
+      continue-on-error: true
+      
     - name: Check the output directory before uploading
       run: |
         ls -al ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/
