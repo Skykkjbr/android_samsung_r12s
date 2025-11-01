@@ -17,7 +17,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/Skykkjbr/twrp_s24fe-test'
+        default: 'https://github.com/Skykkjbr/android_samsung_r12s'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
@@ -76,7 +76,7 @@ jobs:
             sudo bash setup/install_android_sdk.sh
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
-    - name: Sync OrangeFox sources and minimal manifest
+    - name: Sync Recovery sources and minimal manifest
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}
         git clone --depth 1 ${{ github.event.inputs.SYNC_URL }}
