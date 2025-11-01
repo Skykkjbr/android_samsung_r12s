@@ -2,8 +2,6 @@
 
 This repository contains the device tree for the Samsung SM-S721B (r12s) compatible with TWRP 12.1.
 
-"This project is experimental and a work in progress (WIP). It is not recommended for dirty builds or force-pushes. Use at your own risk."
-
 ## Workflow
 
 A fully automated workflow is available for building the recovery image.
